@@ -8,7 +8,7 @@ interface Students
     string Students_gender { get; set; }
     DateTime Students_birthday { get; set; }
 }
-//Class thong tin hoc sinh
+//Class thong tin hoc sinh.
 public class Studentsinfo : Students
 {
     public  string name_of_student;
