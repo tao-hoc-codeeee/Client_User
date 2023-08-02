@@ -41,6 +41,7 @@ namespace Client_User
                 Console.WriteLine("2. Academic Transcript");
                 Console.WriteLine("3. History Coures.");
                 Console.WriteLine("4. Change Password.");
+                Console.WriteLine("5. Information Class.");
                 Console.WriteLine("0. Exit");
                 Console.WriteLine("==========================================================");
                 Console.Write("Your Choice: ");
@@ -55,6 +56,8 @@ namespace Client_User
                     case 3:
                     break;
                     case 4:
+                    break;
+                    case 5:
                     break;
                     case 0:
                     break;
