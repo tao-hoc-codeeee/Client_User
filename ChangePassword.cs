@@ -30,7 +30,7 @@ namespace Client_User
             }
             catch (Exception ex)
             {
-                Console.WriteLine("" + ex.Message);
+                Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!" + ex.Message);
             }
 
         }

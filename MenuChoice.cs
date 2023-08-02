@@ -50,12 +50,16 @@ namespace Client_User
                 switch(j)
                 {
                     case 1:
+                        Displayinfo display_1 = new Displayinfo();
+                        display_1.Information();
                     break;
                     case 2:
                     break;
                     case 3:
                     break;
                     case 4:
+                        ChangePassword display_4 = new ChangePassword();
+                        display_4.DisplayChangePassword();
                     break;
                     case 5:
                     break;
