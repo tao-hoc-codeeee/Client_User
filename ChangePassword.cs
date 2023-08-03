@@ -28,9 +28,9 @@ namespace Client_User
 
                 } while (j != 0);
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!" + ex.Message);
+                Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!");
             }
 
         }

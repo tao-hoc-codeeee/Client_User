@@ -14,9 +14,9 @@ class program
             MenuLoginActivity menuLoginActivity = new MenuLoginActivity();
             menuLoginActivity.MenuLogin();
         }
-        catch (Exception ex)
+        catch 
         {
-            Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!" + ex.Message);
+            Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!");
         }
 
     }
