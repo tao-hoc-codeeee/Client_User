@@ -7,6 +7,10 @@ namespace Client_User
 {
     public class Displayinfo
     {
+        public void Information()
+        {
+            
+        }
         public void Show_Information(string student_id)
         {
             Console.OutputEncoding = Encoding.Unicode;
