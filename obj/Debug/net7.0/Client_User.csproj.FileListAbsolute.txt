@@ -13,17 +13,10 @@ C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\MySql.Data.
 C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\BouncyCastle.Crypto.dll
 C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
 C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\System.Drawing.Common.dll
-C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\System.IO.Pipelines.dll
 C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\System.Security.Permissions.dll
 C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\System.Windows.Extensions.dll
-C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\ZstdSharp.dll
 C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\runtimes\win-x64\native\comerr64.dll
-C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\runtimes\win-x64\native\gssapi64.dll
-C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\runtimes\win-x64\native\k5sprt64.dll
-C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\runtimes\win-x64\native\krb5_64.dll
-C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\runtimes\win-x64\native\krbcc64.dll
 C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
@@ -39,3 +32,5 @@ C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\obj\Debug\net7.0\refint\Clie
 C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\obj\Debug\net7.0\Client_User.pdb
 C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\obj\Debug\net7.0\Client_User.genruntimeconfig.cache
 C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\obj\Debug\net7.0\ref\Client_User.dll
+C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\Ubiety.Dns.Core.dll
+C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\ZstdNet.dll

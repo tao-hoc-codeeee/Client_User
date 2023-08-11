@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace Client_User
 {
@@ -11,17 +9,17 @@ namespace Client_User
         public int j = -1;
         public void MenuLogin()
         {
-            try
-            {
+            // try
+            // {
                 LoginUI loginUI = new LoginUI();
                 loginUI.Login();
                 MenuUser menuAdministrator = new MenuUser();
                 menuAdministrator.Mainmenu();
-            }
-            catch
-            {
-                Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!");
-            }
+            // }
+            // catch
+            // {
+            //     Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!");
+            // }
         }
     }
 
