@@ -94,7 +94,7 @@ namespace Client_User
         /// Hàm lấy id của student trong mysql dựa vào student No 
         /// </summary>
         /// <param name="StudentNo">student no cua hoc sinh</param>
-        public void GetStudentId(string StudentNo)
+        public int GetStudentId(string StudentNo)
         {
             int StudentId = -1;
 
@@ -106,7 +106,7 @@ namespace Client_User
             {
                 command.CommandType = System.Data.CommandType.StoredProcedure;
 
-                command.Parameters.AddWithValue("@StudentNo", student_no); // ghi tên student no ở đây (cái student no mà đặt tên trong StoredProcedure)
+                command.Parameters.AddWithValue("@StudentNo", StudentNo); // ghi tên student no ở đây (cái student no mà đặt tên trong StoredProcedure)
                 command.Parameters.Add("@StudentId", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;  // ghi tên student id ở đây (cái student id mà đặt tên trong StoredProcedure)
                 command.ExecuteNonQuery();
 

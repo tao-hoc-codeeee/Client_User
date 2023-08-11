@@ -10,14 +10,15 @@ namespace Client_User
     {
         public int j;
 
-        public string StudentNo;
+
         public void DisplayChangePassword()
         {
+            string StudentNo = "123456789";
             string OldPassword;
             string NewPassword;
             string ReNewPassword;
-            try
-            {
+            // try
+            // {
                 do
                 {
                     Console.Clear();
@@ -29,29 +30,25 @@ namespace Client_User
                     NewPassword = ReadPassword("Enter your new password: ");
                     ReNewPassword = ReadPassword("Re-enter your new password: ");
 
-                    if (AuthenticatePassword(OldPassword))
+                    if (AuthenticatePassword(StudentNo, OldPassword) && NewPassword.Equals(ReNewPassword))
                     {
-                        if (NewPassword.Equals(ReNewPassword))
-                        {
-                            changepassword(StudentNo, NewPassword);
-                        }
-                        else
-                        {
-                            Console.WriteLine("new password does not match!\nPlease check the information again");
-                            Console.ReadKey();
-                        }
+
+                        changePassword(StudentNo, NewPassword);
+                        Console.ReadKey();
+                        break;
+
                     }
                     else
                     {
                         Console.WriteLine("password does not exist!\nPlease check the information again.");
                         Console.ReadKey();
                     }
-                } while (j != 0);
-            }
-            catch
-            {
-                Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!");
-            }
+                } while (true);
+            //}
+            // catch
+            // {
+            //     Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!");
+            // }
 
         }
 
@@ -102,7 +99,7 @@ namespace Client_User
         static bool AuthenticatePassword(string studentNo, string oldPassword)
         {
             MySqlConnection connection = Connection.GetConnection();
-            string StoredProcedure = "sp_AuthenticateUser";
+            string StoredProcedure = $"SELECT COUNT(*) FROM students WHERE student_no = @StudentNo AND password = @Password";
             using (var command = new MySqlCommand(StoredProcedure, connection))
             {
 
@@ -121,7 +118,7 @@ namespace Client_User
         /// </summary>
         /// <param name="student_no">student no của học sinh</param>
         /// <returns></returns>
-        public int GetStudentId(string student_no)
+        public static int GetStudentId(string student_no)
         {
             int StudentId = -1;
 
@@ -153,24 +150,26 @@ namespace Client_User
         /// <param name="newPaswword"> mật khẩu mới của học sinh đã nhập trên hàm display</param>
         static void changePassword(string studentNo, string newPaswword)
         {
-            try
-            {
+            // try
+            // {
                 int studentId = GetStudentId(studentNo);
                 MySqlConnection connection = Connection.GetConnection();
                 string StoredProcedure = "sp_changePassword";
                 using (var command = new MySqlCommand(StoredProcedure, connection))
                 {
                     command.Parameters.AddWithValue("@StudentId", studentId);
+                    command.Parameters["@StudentId"].Direction= ParameterDirection.Input;
                     command.Parameters.AddWithValue("@NewPassword", newPaswword);
+                    command.Parameters["@NewPassword"].Direction = ParameterDirection.Input;
 
-                    command.ExecuteNonQuery();
-                    Console.WriteLine("successfully!");
+                    Int32 recordsAffected = command.ExecuteNonQuery();
+                    Console.WriteLine("Change password successfully!");
                 }
-            }
-            catch
-            {
-                Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!");
-            }
+            // }
+            // catch
+            // {
+            //     Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!");
+            // }
         }
     }
 }
