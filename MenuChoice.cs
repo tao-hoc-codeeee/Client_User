@@ -54,6 +54,8 @@ namespace Client_User
                         display_1.Information();
                     break;
                     case 2:
+                        AcademicTranscript display_2 = new AcademicTranscript();
+                        display_2.DisplayAcademicTranscript();
                     break;
                     case 3:
                     break;
@@ -62,6 +64,8 @@ namespace Client_User
                         display_4.DisplayChangePassword();
                     break;
                     case 5:
+                        InfomationClass display_5 = new InfomationClass();
+                        display_5.DisplayInfoClass();
                     break;
                     case 0:
                     break;

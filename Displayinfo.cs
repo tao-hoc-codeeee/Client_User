@@ -7,11 +7,25 @@ namespace Client_User
 {
     public class Displayinfo
     {
+        public int j;
+
+        public string StudentNo;
         public void Information()
         {
-            
+            Console.Clear();
+            Console.WriteLine();
+            Console.WriteLine("==========================================================");
+            Console.WriteLine("-------------------------Infomation-----------------------");
+            Console.WriteLine("==========================================================");
+            int studentId = GetStudentId(StudentNo);
+            Show_Information(studentId);
         }
-        public void Show_Information(string student_id)
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="student_id"></param>
+        public void Show_Information(int student_id)
         {
             Console.OutputEncoding = Encoding.Unicode;
             Console.InputEncoding = Encoding.Unicode;
@@ -36,7 +50,7 @@ namespace Client_User
                 string Name = reader.GetString("");  // Tương đối với name của bạn
                 string Class = reader.GetString("");
                 DateTime BirthDate = reader.GetDateTime("");
-                // Type enum của Gender chưa bt ghi thế nào nên sẽ ghi sau :)))
+                string Gender = reader.GetString("");
 
 
                 var row = new List<string>
@@ -45,7 +59,7 @@ namespace Client_User
                     Name,
                     Class,
                     BirthDate.ToString(),
-                    //ghi Gender ở đây
+                    Gender
                 };
 
                 table.Add(row);
@@ -75,9 +89,35 @@ namespace Client_User
 
         }
 
+
+        /// <summary>
+        /// Hàm lấy id của student trong mysql dựa vào student No 
+        /// </summary>
+        /// <param name="StudentNo">student no cua hoc sinh</param>
         public void GetStudentId(string StudentNo)
         {
-            
+            int StudentId = -1;
+
+            // Kết nối đến cơ sở dữ liệu
+            MySqlConnection connection = Connection.GetConnection();
+            // Tạo command để thực thi thủ tục lưu trữ
+            string StoredProcedure = "sp_GetStudentId"; // ghi tên procedure ở đây
+            using (MySqlCommand command = new MySqlCommand(StoredProcedure, connection))
+            {
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@StudentNo", student_no); // ghi tên student no ở đây (cái student no mà đặt tên trong StoredProcedure)
+                command.Parameters.Add("@StudentId", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;  // ghi tên student id ở đây (cái student id mà đặt tên trong StoredProcedure)
+                command.ExecuteNonQuery();
+
+                if (command.Parameters["@StudentId"].Value != DBNull.Value) // ghi tên student id ở đây (cái student id mà đặt tên trong StoredProcedure)
+                {
+                    StudentId = Convert.ToInt32(command.Parameters["@StudentId"].Value); // ghi tên student id ở đây (cái student id mà đặt tên trong StoredProcedure)
+                }
+
+                return StudentId;
+            }
+
         }
     }
 }
