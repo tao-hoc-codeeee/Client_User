@@ -13,37 +13,40 @@ namespace Client_User
 
         public void DisplayChangePassword()
         {
+            Console.OutputEncoding = Encoding.Unicode;
+            Console.InputEncoding = Encoding.Unicode;
+
             string StudentNo = "123456789";
             string OldPassword;
             string NewPassword;
             string ReNewPassword;
             // try
             // {
-                do
+            do
+            {
+                Console.Clear();
+                Console.WriteLine();
+                Console.WriteLine("==========================================================");
+                Console.WriteLine("----------------------Change Password---------------------");
+                Console.WriteLine("==========================================================");
+                OldPassword = ReadPassword("Enter your old password: ");
+                NewPassword = ReadPassword("Enter your new password: ");
+                ReNewPassword = ReadPassword("Re-enter your new password: ");
+
+                if (AuthenticatePassword(StudentNo, OldPassword) && NewPassword.Equals(ReNewPassword))
                 {
-                    Console.Clear();
-                    Console.WriteLine();
-                    Console.WriteLine("==========================================================");
-                    Console.WriteLine("----------------------Change Password---------------------");
-                    Console.WriteLine("==========================================================");
-                    OldPassword = ReadPassword("Enter your old password: ");
-                    NewPassword = ReadPassword("Enter your new password: ");
-                    ReNewPassword = ReadPassword("Re-enter your new password: ");
 
-                    if (AuthenticatePassword(StudentNo, OldPassword) && NewPassword.Equals(ReNewPassword))
-                    {
+                    changePassword(StudentNo, NewPassword);
+                    Console.ReadKey();
+                    break;
 
-                        changePassword(StudentNo, NewPassword);
-                        Console.ReadKey();
-                        break;
-
-                    }
-                    else
-                    {
-                        Console.WriteLine("password does not exist!\nPlease check the information again.");
-                        Console.ReadKey();
-                    }
-                } while (true);
+                }
+                else
+                {
+                    Console.WriteLine("password does not exist!\nPlease check the information again.");
+                    Console.ReadKey();
+                }
+            } while (true);
             //}
             // catch
             // {
@@ -152,19 +155,19 @@ namespace Client_User
         {
             // try
             // {
-                int studentId = GetStudentId(studentNo);
-                MySqlConnection connection = Connection.GetConnection();
-                string StoredProcedure = "sp_changePassword";
-                using (var command = new MySqlCommand(StoredProcedure, connection))
-                {
-                    command.Parameters.AddWithValue("@StudentId", studentId);
-                    command.Parameters["@StudentId"].Direction= ParameterDirection.Input;
-                    command.Parameters.AddWithValue("@NewPassword", newPaswword);
-                    command.Parameters["@NewPassword"].Direction = ParameterDirection.Input;
+            int studentId = GetStudentId(studentNo);
+            MySqlConnection connection = Connection.GetConnection();
+            string StoredProcedure = "update students set password = @NewPassword where student_id = @StudentId;";
+            using (var command = new MySqlCommand(StoredProcedure, connection))
+            {
+                command.Parameters.AddWithValue("@StudentId", studentId);
+                command.Parameters["@StudentId"].Direction = ParameterDirection.Input;
+                command.Parameters.AddWithValue("@NewPassword", newPaswword);
+                command.Parameters["@NewPassword"].Direction = ParameterDirection.Input;
 
-                    Int32 recordsAffected = command.ExecuteNonQuery();
-                    Console.WriteLine("Change password successfully!");
-                }
+                Int32 recordsAffected = command.ExecuteNonQuery();
+                Console.WriteLine("Change password successfully!");
+            }
             // }
             // catch
             // {

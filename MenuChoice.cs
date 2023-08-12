@@ -36,11 +36,11 @@ namespace Client_User
                 Console.WriteLine("-----------------------Student Menu-----------------------");
                 Console.WriteLine("==========================================================");
                 Console.WriteLine("1. Show information.");
-                Console.WriteLine("2. Academic Transcript");
+                Console.WriteLine("2. Academic Transcript.");
                 Console.WriteLine("3. History Coures.");
                 Console.WriteLine("4. Change Password.");
                 Console.WriteLine("5. Information Class.");
-                Console.WriteLine("0. Exit");
+                Console.WriteLine("0. Exit.");
                 Console.WriteLine("==========================================================");
                 Console.Write("Your Choice: ");
                 j = Convert.ToInt32(Console.ReadLine() ?? "".TrimEnd(' '));

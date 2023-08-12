@@ -32,5 +32,10 @@ C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\obj\Debug\net7.0\refint\Clie
 C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\obj\Debug\net7.0\Client_User.pdb
 C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\obj\Debug\net7.0\Client_User.genruntimeconfig.cache
 C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\obj\Debug\net7.0\ref\Client_User.dll
-C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\Ubiety.Dns.Core.dll
-C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\ZstdNet.dll
+C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\System.IO.Pipelines.dll
+C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\ZstdSharp.dll
+C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\runtimes\win-x64\native\comerr64.dll
+C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\runtimes\win-x64\native\gssapi64.dll
+C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\runtimes\win-x64\native\krb5_64.dll
+C:\Users\Quan\OneDrive\Documents\GitHub\Client_User\bin\Debug\net7.0\runtimes\win-x64\native\krbcc64.dll

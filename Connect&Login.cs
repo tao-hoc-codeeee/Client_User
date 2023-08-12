@@ -9,7 +9,7 @@ namespace Client_User
         {
             MySqlConnection myconnection = new MySqlConnection
             {
-                ConnectionString = @"server=localhost;user id=root;password=nguyenthequan305;port=3306;database=StudentManagement1;"
+                ConnectionString = @"server=localhost;user id=root;password=nguyenthequan305;port=3306;database=StudentManagement1;charset=utf8mb4;"
             };
             myconnection.Open();
             return myconnection;
