@@ -31,6 +31,12 @@ namespace Client_User
                 Console.WriteLine("==========================================================");
                 OldPassword = ReadPassword("Enter your old password: ");
                 NewPassword = ReadPassword("Enter your new password: ");
+                if (NewPassword.Length > 20)
+                {
+                    Console.WriteLine("Password should be maximum 20 characters.");
+                    Console.ReadKey();
+                    continue;
+                }
                 ReNewPassword = ReadPassword("Re-enter your new password: ");
 
                 if (AuthenticatePassword(StudentNo, OldPassword) && NewPassword.Equals(ReNewPassword))
@@ -46,6 +52,7 @@ namespace Client_User
                     Console.WriteLine("password does not exist!\nPlease check the information again.");
                     Console.ReadKey();
                 }
+
             } while (true);
             //}
             // catch
@@ -79,12 +86,13 @@ namespace Client_User
                         password = password.Substring(0, password.Length - 1);
                         Console.Write("\b \b");
                     }
-                    else if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Delete)
+                    else if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Delete && key.Key != ConsoleKey.Escape)
                     {
                         // Thêm ký tự vào mật khẩu và hiển thị dấu *
                         password += key.KeyChar;
                         Console.Write("*");
                     }
+
                 }
 
             } while (key.Key != ConsoleKey.Enter);

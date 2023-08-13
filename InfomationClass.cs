@@ -1,9 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
 namespace Client_User
@@ -43,7 +40,7 @@ namespace Client_User
 
             //thêm tiêu đề bảng
             // var header = new List<string> { "Student No", "Name", "Class", "Brith Date", "Gender" };
-            var header = new List<string> { "Student No", "Name", "Brith Date", "Gender" };
+            var header = new List<string> { "Student No", "Name", "Class", "Brith Date", "Gender" };
             table.Add(header);
 
             // Tính toán chiều dài tối đa của mỗi cột
@@ -57,23 +54,24 @@ namespace Client_User
             {
                 string StudentNo = reader.GetString("student_no");// Student no tương úng trong StoredProcedure
                 string Name = reader.GetString("student_name");  // Tương đối với name của bạn
-                //string Class = reader.GetString("");
+                string Class = reader.GetString("class_name");
                 DateTime BirthDate = reader.GetDateTime("birth_date");
                 string Gender = reader.GetString("gender");
 
                 // Cập nhật chiều dài tối đa của mỗi cột dựa trên dữ liệu mới
                 columnWidths[0] = Math.Max(columnWidths[0], StudentNo.Length);
                 columnWidths[1] = Math.Max(columnWidths[1], Name.Length);
-                columnWidths[2] = Math.Max(columnWidths[2], BirthDate.ToString().Length);
-                columnWidths[3] = Math.Max(columnWidths[3], Gender.Length);
+                columnWidths[2] = Math.Max(columnWidths[2], Class.Length);
+                columnWidths[3] = Math.Max(columnWidths[3], BirthDate.ToString().Length);
+                columnWidths[4] = Math.Max(columnWidths[4], Gender.Length);
 
 
                 var row = new List<string>
                 {
                     StudentNo,
                     Name,
-                    //Class,
-                    BirthDate.ToString(),
+                    Class,
+                    BirthDate.ToString("dd/MM/yyyy"),
                     Gender
                 };
 

@@ -71,7 +71,7 @@ namespace Client_User
                     StudentNo,
                     Name,
                     //Class,
-                    BirthDate.ToString(),
+                    BirthDate.ToString("dd/MM/yyyy"),
                     Gender
                 };
 
