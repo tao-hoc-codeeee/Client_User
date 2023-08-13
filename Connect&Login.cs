@@ -84,7 +84,7 @@ namespace Client_User
                         password = password.Substring(0, password.Length - 1);
                         Console.Write("\b \b");
                     }
-                    else if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Delete)
+                    else if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Delete && key.Key != ConsoleKey.Escape)
                     {
                         // Thêm ký tự vào mật khẩu và hiển thị dấu *
                         password += key.KeyChar;
@@ -116,6 +116,7 @@ namespace Client_User
 
             // count lớn hơn 0 trả về true = 0 trả về false(nếu sinh viên tồn tại nó sẽ trả về student id của sinh viên đó mặc định sẽ lớn hơn 0 nếu có tồn tại).
         }
+        
     }
 
 }
