@@ -9,7 +9,7 @@ namespace Client_User
     {
         public void DisplayAcademicTranscript()
         {
-            string StudentNo = "123456789";
+            string StudentNo = Students.StudentNo;
             Console.Clear();
             Console.WriteLine();
             int studentId = GetStudentId(StudentNo);

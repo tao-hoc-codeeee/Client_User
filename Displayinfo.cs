@@ -12,7 +12,7 @@ namespace Client_User
 
         public void Information()
         {
-            string StudentNo = "123456789";
+            string StudentNo = Students.StudentNo;
             Console.Clear();
             Console.WriteLine();
             int studentId = GetStudentId(StudentNo);

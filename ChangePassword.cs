@@ -16,7 +16,7 @@ namespace Client_User
             Console.OutputEncoding = Encoding.Unicode;
             Console.InputEncoding = Encoding.Unicode;
 
-            string StudentNo = "123456789";
+            string StudentNo = Students.StudentNo;
             string OldPassword;
             string NewPassword;
             string ReNewPassword;
