@@ -32,12 +32,6 @@ namespace Client_User
         {
             string ID;
             string password;
-            // đoạn này sẽ xóa sau khi xong các hàm bên trong 
-            // Console.WriteLine("\t\t\t\tLogin\t\t\t\t");
-            // Console.Write("Enter your ID :");
-            // ID = Console.ReadLine() ?? "".TrimEnd(' ');
-            // Console.Write("Enter your password :");
-            // string password = ReadPassword().TrimEnd(' ');
 
             //Đăng nhập + xác minh tài khoản để sau dùng h xài cái trên cho tiện
             do

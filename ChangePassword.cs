@@ -20,8 +20,8 @@ namespace Client_User
             string OldPassword;
             string NewPassword;
             string ReNewPassword;
-            // try
-            // {
+            try
+            {
             do
             {
                 Console.Clear();
@@ -54,11 +54,11 @@ namespace Client_User
                 }
 
             } while (true);
-            //}
-            // catch
-            // {
-            //     Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!");
-            // }
+            }
+            catch
+            {
+                Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!");
+            }
 
         }
 
@@ -161,8 +161,8 @@ namespace Client_User
         /// <param name="newPaswword"> mật khẩu mới của học sinh đã nhập trên hàm display</param>
         static void changePassword(string studentNo, string newPaswword)
         {
-            // try
-            // {
+            try
+            {
             int studentId = GetStudentId(studentNo);
             MySqlConnection connection = Connection.GetConnection();
             string StoredProcedure = "update students set password = @NewPassword where student_id = @StudentId;";
@@ -176,11 +176,11 @@ namespace Client_User
                 Int32 recordsAffected = command.ExecuteNonQuery();
                 Console.WriteLine("Change password successfully!");
             }
-            // }
-            // catch
-            // {
-            //     Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!");
-            // }
+            }
+            catch
+            {
+                Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!");
+            }
         }
     }
 }

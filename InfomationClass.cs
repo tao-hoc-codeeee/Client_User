@@ -129,28 +129,7 @@ namespace Client_User
                 Console.Write(new string('-', width + 2) + "+");
             }
             Console.WriteLine();
-
-
-
-
-            // int columnCount = table[0].Count;
-            // int[] columnWidths = new int[columnCount];
-
-            // for (int i = 0; i < columnCount; i++)
-            // {
-            //     columnWidths[i] = table.Max(Row => Row[i].Length);//
-            // }
-
-            //hiển thị bảng 
-            // foreach (var row in table)
-            // {
-            //     for (int i = 0; i < columnCount; i++)
-            //     {
-            //         Console.Write(row[i].PadRight(columnWidths[i] + 2));
-            //     }
-            //     Console.WriteLine();
-            // }
-
+            
         }
 
         public int GetStudentId(string StudentNo)
