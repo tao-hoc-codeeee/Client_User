@@ -9,17 +9,17 @@ namespace Client_User
         public int j = -1;
         public void MenuLogin()
         {
-            // try
-            // {
+            try
+            {
                 LoginUI loginUI = new LoginUI();
                 loginUI.Login();
                 MenuUser menuAdministrator = new MenuUser();
                 menuAdministrator.Mainmenu();
-            // }
-            // catch
-            // {
-            //     Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!");
-            // }
+            }
+            catch
+            {
+                Console.WriteLine("Sorry!\nSomething went wrong, please try again in a few minutes!");
+            }
         }
     }
 
@@ -37,9 +37,8 @@ namespace Client_User
                 Console.WriteLine("==========================================================");
                 Console.WriteLine("1. Show information.");
                 Console.WriteLine("2. Academic Transcript.");
-                Console.WriteLine("3. History Coures.");
-                Console.WriteLine("4. Change Password.");
-                Console.WriteLine("5. Information Class.");
+                Console.WriteLine("3. Change Password.");
+                Console.WriteLine("4. Information Class.");
                 Console.WriteLine("0. Exit.");
                 Console.WriteLine("==========================================================");
                 Console.Write("Your Choice: ");
@@ -56,14 +55,12 @@ namespace Client_User
                         display_2.DisplayAcademicTranscript();
                     break;
                     case 3:
+                        ChangePassword display_3 = new ChangePassword();
+                        display_3.DisplayChangePassword();
                     break;
                     case 4:
-                        ChangePassword display_4 = new ChangePassword();
-                        display_4.DisplayChangePassword();
-                    break;
-                    case 5:
-                        InfomationClass display_5 = new InfomationClass();
-                        display_5.DisplayInfoClass();
+                        InfomationClass display_4 = new InfomationClass();
+                        display_4.DisplayInfoClass();
                     break;
                     case 0:
                     break;
